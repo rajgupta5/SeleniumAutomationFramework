@@ -7,9 +7,9 @@ import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 
 
-public class BasePageTest {
+public class BaseTest {
 
-    protected BasePageTest() {
+    protected BaseTest() {
 
     }
 
