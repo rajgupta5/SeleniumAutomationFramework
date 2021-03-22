@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="UI Test Suite" parallel="classes" thread-count="3">
-	<test name="Sample UI Test - Desktop" parallel="classes">
+<suite name="UI Test Suite" data-provider-thread-count="2" >
+	<test name="Sample UI Test - Desktop" parallel="methods" thread-count="1">
 		<classes>
 <!--		    <class name="org.example.tests.LoginPageTest" />-->
 <!--			<class name="org.example.tests.HomePageTest" />-->

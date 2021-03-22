@@ -2,8 +2,8 @@ package org.example.tests;
 
 import org.assertj.core.api.Assertions;
 import org.example.driver.DriverManager;
-import org.example.pages.OrangeHrmHomePage;
 import org.example.pages.OrangeHrmLoginPage;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public final class OrangeHrmTest extends BaseTest {
@@ -13,14 +13,23 @@ public final class OrangeHrmTest extends BaseTest {
     }
 
 
-    @Test
-    public void LoginLogoutTest() {
+    @Test(dataProvider = "LoginTestDataProvider")
+    public void LoginLogoutTest(String username, String password) {
         DriverManager.getDriver().manage().window().maximize();
         OrangeHrmLoginPage ohrmp = new OrangeHrmLoginPage();
-        OrangeHrmLoginPage ohrml = ohrmp.enterUsername("Admin").enterPassword("admin123").clickLogin().clickWelcome().clickLogout();
+        OrangeHrmLoginPage ohrml = ohrmp.enterUsername(username).enterPassword(password).clickLogin().clickWelcome().clickLogout();
         Assertions.assertThat(ohrml.getTitle())
                 .isEqualTo("OrangeHRM");
+    }
 
+    @DataProvider(name = "LoginTestDataProvider", parallel = true)
+    public Object[][] getData() {
+        return new Object[][] {
+                {"Admin", "admin123"},
+                {"Admin123", "admin1234"},
+                {"Admin123", "admin1235"},
+                {"Admin123", "admin1236"}
+        };
 
     }
 

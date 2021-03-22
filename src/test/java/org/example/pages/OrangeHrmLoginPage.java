@@ -1,6 +1,7 @@
 package org.example.pages;
 
 import org.example.driver.DriverManager;
+import org.example.enums.WaitStrategy;
 import org.openqa.selenium.By;
 
 public final class OrangeHrmLoginPage extends BasePage {
@@ -18,17 +19,17 @@ public final class OrangeHrmLoginPage extends BasePage {
     private final By buttonLogin = By.id("btnLogin");
 
     public OrangeHrmLoginPage enterUsername(String username) {
-        sendText(textboxUsername, username, "Present");
+        sendText(textboxUsername, username, WaitStrategy.PRESENCE);
         return this;
     }
 
     public OrangeHrmLoginPage enterPassword(String password) {
-        sendText(textboxPassword, password, "Present");
+        sendText(textboxPassword, password, WaitStrategy.PRESENCE);
         return this;
     }
 
     public OrangeHrmHomePage clickLogin() {
-        click(buttonLogin, "Clickable");
+        click(buttonLogin, WaitStrategy.CLICKABLE);
         return new OrangeHrmHomePage();
     }
 

@@ -1,20 +1,20 @@
 package org.example.utilities;
 
 import org.example.constants.FrameworkConstants;
+import org.example.enums.ConfigProperties;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Properties;
 
-public final class ReadPropertyFile {
+public final class PropertyUtil {
 
     private static Properties properties = new Properties();
     private static final Map<String, String> CONFIGMAP = new HashMap<>();
-    private ReadPropertyFile() {
+    private PropertyUtil() {
 
     }
 
@@ -32,11 +32,11 @@ public final class ReadPropertyFile {
         }
     }
 
-    public static String get(String key) throws Exception {
-        if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key))) {
+    public static String get(ConfigProperties key) throws Exception {
+        if(Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase()))) {
             throw new Exception("Property name " + key + " is not found. Please framework.properties");
         }
-        return CONFIGMAP.get(key);
+        return CONFIGMAP.get(key.name().toLowerCase());
     }
 
     public static String getValue(String key) throws Exception {

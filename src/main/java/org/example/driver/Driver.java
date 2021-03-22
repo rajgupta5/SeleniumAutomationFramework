@@ -1,9 +1,10 @@
 package org.example.driver;
 
-import org.example.utilities.ReadPropertyFile;
+import org.example.enums.ConfigProperties;
+import org.example.utilities.JsonUtil;
+import org.example.utilities.PropertyUtil;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.IOException;
 import java.util.Objects;
 
 import static org.example.constants.FrameworkConstants.getCHROMEDRIVERPATH;
@@ -19,7 +20,7 @@ public final class Driver {
         if(Objects.isNull(getDriver())) {
             System.setProperty("webdriver.chrome.driver", getCHROMEDRIVERPATH());
             DriverManager.setDriver(new ChromeDriver());
-            DriverManager.getDriver().get(ReadPropertyFile.get("url"));
+            DriverManager.getDriver().get(PropertyUtil.get(ConfigProperties.URL));
         }
     }
 

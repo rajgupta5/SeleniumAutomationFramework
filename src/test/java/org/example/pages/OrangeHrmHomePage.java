@@ -1,6 +1,7 @@
 package org.example.pages;
 
 import org.example.driver.DriverManager;
+import org.example.enums.WaitStrategy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,7 +24,7 @@ public final class OrangeHrmHomePage extends BasePage {
     private final By lnkLogout = By.xpath("//a[text()='Logout']");
 
     public OrangeHrmHomePage clickWelcome() {
-        click(lnkWelcome, "Present");
+        click(lnkWelcome, WaitStrategy.PRESENCE);
         return this;
     }
 
@@ -32,7 +33,7 @@ public final class OrangeHrmHomePage extends BasePage {
 //        Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
 
 //        wait.until(d->d.findElement(lnk_logout).isEnabled());
-        click(lnkLogout, "Clickable");
+        click(lnkLogout, WaitStrategy.CLICKABLE);
         return new OrangeHrmLoginPage();
     }
 }
