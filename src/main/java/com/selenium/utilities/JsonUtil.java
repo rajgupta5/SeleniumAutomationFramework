@@ -1,9 +1,9 @@
-package org.example.utilities;
+package com.selenium.utilities;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.constants.FrameworkConstants;
-import org.example.enums.ConfigProperties;
+import com.selenium.constants.FrameworkConstants;
+import com.selenium.enums.ConfigProperties;
 
 import java.io.File;
 import java.io.IOException;

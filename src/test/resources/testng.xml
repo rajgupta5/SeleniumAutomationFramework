@@ -3,9 +3,15 @@
 <suite name="UI Test Suite" data-provider-thread-count="2" >
 	<test name="Sample UI Test - Desktop" parallel="methods" thread-count="1">
 		<classes>
-<!--		    <class name="org.example.tests.LoginPageTest" />-->
-<!--			<class name="org.example.tests.HomePageTest" />-->
-			<class name="org.example.tests.OrangeHrmTest"></class>
+<!--		    <class name="LoginPageTest" />-->
+<!--			<class name="HomePageTest" />-->
+			<class name="com.selenium.tests.OrangeHrmTest">
+				<methods>
+					<include name="LoginLogoutTest"/>
+					<exclude name=""></exclude>
+					<parameter name="" value=""></parameter>
+				</methods>
+			</class>
 		</classes>
 	</test>
 </suite>  

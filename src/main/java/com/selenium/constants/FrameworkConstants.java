@@ -1,4 +1,4 @@
-package org.example.constants;
+package com.selenium.constants;
 
 public final class FrameworkConstants {
 

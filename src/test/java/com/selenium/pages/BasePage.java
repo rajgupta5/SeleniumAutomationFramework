@@ -1,13 +1,9 @@
-package org.example.pages;
+package com.selenium.pages;
 
-import org.example.driver.DriverManager;
-import org.example.enums.WaitStrategy;
-import org.example.factories.ExplicitWaitFactory;
+import com.selenium.driver.DriverManager;
+import com.selenium.factories.ExplicitWaitFactory;
+import com.selenium.enums.WaitStrategy;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static org.example.constants.FrameworkConstants.getEXPLICITWAIT;
 
 public class BasePage {
 

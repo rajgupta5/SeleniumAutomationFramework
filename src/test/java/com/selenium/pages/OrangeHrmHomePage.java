@@ -1,10 +1,8 @@
-package org.example.pages;
+package com.selenium.pages;
 
-import org.example.driver.DriverManager;
-import org.example.enums.WaitStrategy;
+import com.selenium.enums.WaitStrategy;
+import com.selenium.reports.ExtentManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public final class OrangeHrmHomePage extends BasePage {
 
@@ -25,6 +23,7 @@ public final class OrangeHrmHomePage extends BasePage {
 
     public OrangeHrmHomePage clickWelcome() {
         click(lnkWelcome, WaitStrategy.PRESENCE);
+        ExtentManager.getExtentTest().pass("welcome clicked");
         return this;
     }
 
@@ -34,6 +33,7 @@ public final class OrangeHrmHomePage extends BasePage {
 
 //        wait.until(d->d.findElement(lnk_logout).isEnabled());
         click(lnkLogout, WaitStrategy.CLICKABLE);
+        ExtentManager.getExtentTest().pass("logout button clicked");
         return new OrangeHrmLoginPage();
     }
 }

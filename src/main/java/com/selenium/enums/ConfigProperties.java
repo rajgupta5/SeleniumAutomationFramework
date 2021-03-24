@@ -1,4 +1,4 @@
-package org.example.enums;
+package com.selenium.enums;
 
 public enum ConfigProperties {
 

@@ -1,7 +1,6 @@
-package org.example.pages;
+package com.selenium.pages;
 
-import org.example.driver.DriverManager;
-import org.example.enums.WaitStrategy;
+import com.selenium.enums.WaitStrategy;
 import org.openqa.selenium.By;
 
 public final class OrangeHrmLoginPage extends BasePage {

@@ -1,6 +1,6 @@
-package org.example.tests;
+package com.selenium.tests;
 
-import org.example.driver.DriverManager;
+import com.selenium.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;

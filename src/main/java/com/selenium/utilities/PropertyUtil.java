@@ -1,7 +1,7 @@
-package org.example.utilities;
+package com.selenium.utilities;
 
-import org.example.constants.FrameworkConstants;
-import org.example.enums.ConfigProperties;
+import com.selenium.constants.FrameworkConstants;
+import com.selenium.enums.ConfigProperties;
 
 import java.io.FileInputStream;
 import java.io.IOException;
