@@ -1,8 +1,6 @@
 package com.selenium.pages;
 
 import com.selenium.enums.WaitStrategy;
-import com.selenium.reports.ExtentLogger;
-import com.selenium.reports.ExtentManager;
 import org.openqa.selenium.By;
 
 public final class OrangeHrmHomePage extends BasePage {

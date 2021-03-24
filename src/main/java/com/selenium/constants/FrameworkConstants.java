@@ -14,9 +14,18 @@ public final class FrameworkConstants {
     private static final String CONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\framework.properties";
     private static final String JSONCONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\config.json";
     private static final String EXTENTREPORTFOLDERPATH = USERDIRPATH+"\\extent-test-output";
+    private static final String EXCELPATH = USERDIRPATH+"\\src\\test\\resources\\excel\\testdata.xlsx";
+    private static final String RUNMANGERSHEET = "RUNMANAGER";
     private static String EXTENTREPORTFILEPATH = "";
     private static final Integer EXPLICITWAIT = 10;
 
+    public static String getRUNMANGERSHEET() {
+        return RUNMANGERSHEET;
+    }
+
+    public static String getEXCELPATH() {
+        return EXCELPATH;
+    }
 
     public static String getEXTENTREPORTFILEPATH() {
         if(EXTENTREPORTFILEPATH.isEmpty()) {
