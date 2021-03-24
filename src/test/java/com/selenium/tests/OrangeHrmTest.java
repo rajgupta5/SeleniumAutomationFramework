@@ -29,8 +29,8 @@ public final class OrangeHrmTest extends BaseTest {
     public Object[][] getData() {
         return new Object[][] {
                 {"Admin", "admin123"},
-                {"Admin", "admin123"},
-//                {"Admin123", "admin1234"},
+//                {"Admin", "admin123"},
+                {"Admin123", "admin1234"},
 //                {"Admin123", "admin1235"},
 //                {"Admin123", "admin1236"}
         };

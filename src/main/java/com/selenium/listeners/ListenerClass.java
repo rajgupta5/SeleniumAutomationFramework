@@ -20,7 +20,7 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     public void onFinish(ISuite iSuite) {
         try {
             ExtentReport.flushReports();
-            Desktop.getDesktop().browse(new File(FrameworkConstants.getEXTENTREPORTPATH()).toURI());
+            Desktop.getDesktop().browse(new File(FrameworkConstants.getEXTENTREPORTFILEPATH()).toURI());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,24 +29,24 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     @Override
     public void onTestStart(ITestResult iTestResult) {
         ExtentReport.createTest(iTestResult.getMethod().getMethodName());
-        ExtentLogger.pass(iTestResult.getName() + " is started successfully");
+        ExtentLogger.pass(iTestResult.getName() + " is started successfully", true);
 
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        ExtentLogger.pass(iTestResult.getMethod().getMethodName() + " is passed");
+        ExtentLogger.pass(iTestResult.getMethod().getMethodName() + " is passed", true);
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
         iTestResult.getThrowable().getMessage();
-        ExtentLogger.fail(iTestResult.getMethod().getMethodName() + " is failed");
+        ExtentLogger.fail(iTestResult.getMethod().getMethodName() + " is failed", true);
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-
+        ExtentLogger.skip(iTestResult.getMethod().getMethodName() + " is skipped", true);
     }
 
     @Override

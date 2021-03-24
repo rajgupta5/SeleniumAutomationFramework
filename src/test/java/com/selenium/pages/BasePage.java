@@ -10,12 +10,12 @@ public class BasePage {
 
     protected void click(By by, WaitStrategy waitStrategy, String elementName) {
         ExplicitWaitFactory.performExplicitWait(waitStrategy, by).click();
-        ExtentLogger.pass(elementName + " is clicked");
+        ExtentLogger.pass(elementName + " is clicked", true);
     }
 
     protected void sendText(By by, String text, WaitStrategy waitStrategy) {
         ExplicitWaitFactory.performExplicitWait(waitStrategy, by).sendKeys(text);
-        ExtentLogger.pass(text + " is entered");
+        ExtentLogger.pass(text + " is entered", true);
     }
 
     protected String getTitleText() {

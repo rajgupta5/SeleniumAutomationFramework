@@ -22,7 +22,7 @@ public final class ExtentReport {
     public static void initReports() {
         if(Objects.isNull(extent)) {
             extent = new ExtentReports();
-            ExtentSparkReporter spark = new ExtentSparkReporter(FrameworkConstants.getEXTENTREPORTPATH());
+            ExtentSparkReporter spark = new ExtentSparkReporter(FrameworkConstants.getEXTENTREPORTFILEPATH());
             extent.attachReporter(spark);
             spark.config().setTheme(Theme.DARK);
             spark.config().setDocumentTitle("Test Automation Report");

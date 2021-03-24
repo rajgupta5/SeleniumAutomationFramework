@@ -1,5 +1,8 @@
 package com.selenium.constants;
 
+import com.selenium.enums.ConfigProperties;
+import com.selenium.utilities.PropertyUtil;
+
 public final class FrameworkConstants {
 
     private FrameworkConstants() {
@@ -10,11 +13,30 @@ public final class FrameworkConstants {
     private static final String CHROMEDRIVERPATH = USERDIRPATH + "\\src\\test\\resources\\executables\\chromedriver.exe";
     private static final String CONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\framework.properties";
     private static final String JSONCONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\config.json";
-    public static final String EXTENTREPORTPATH = USERDIRPATH+"\\ExtentReports\\index.html";
+    private static final String EXTENTREPORTFOLDERPATH = USERDIRPATH+"\\extent-test-output";
+    private static String EXTENTREPORTFILEPATH = "";
     private static final Integer EXPLICITWAIT = 10;
 
-    public static String getEXTENTREPORTPATH() {
-        return EXTENTREPORTPATH;
+
+    public static String getEXTENTREPORTFILEPATH() {
+        if(EXTENTREPORTFILEPATH.isEmpty()) {
+            EXTENTREPORTFILEPATH = EXTENTREPORTFOLDERPATH + createExtentFilePath();
+        }
+        return EXTENTREPORTFILEPATH;
+    }
+
+    private static String createExtentFilePath() {
+        try {
+            if(PropertyUtil.get(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("yes")) {
+                return "/" + System.currentTimeMillis() + "index.html";
+            }
+            else {
+                return "/index.html";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     public static String getJSONCONFIGFILEPATH() {
