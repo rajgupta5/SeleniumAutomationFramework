@@ -1,7 +1,7 @@
 package com.selenium.constants;
 
 import com.selenium.enums.ConfigProperties;
-import com.selenium.utilities.PropertyUtil;
+import com.selenium.utils.PropertyUtil;
 
 public final class FrameworkConstants {
 
@@ -11,13 +11,23 @@ public final class FrameworkConstants {
 
     private static final String USERDIRPATH = System.getProperty("user.dir");
     private static final String CHROMEDRIVERPATH = USERDIRPATH + "\\src\\test\\resources\\executables\\chromedriver.exe";
+    private static final String GECKODRIVERPATH = USERDIRPATH + "\\src\\test\\resources\\executables\\geckodriver.exe";
     private static final String CONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\framework.properties";
     private static final String JSONCONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\config.json";
     private static final String EXTENTREPORTFOLDERPATH = USERDIRPATH+"\\extent-test-output";
     private static final String EXCELPATH = USERDIRPATH+"\\src\\test\\resources\\excel\\testdata.xlsx";
     private static final String RUNMANGERSHEET = "RUNMANAGER";
+    private static final String ITERATIONDATASHEET = "DATA";
     private static String EXTENTREPORTFILEPATH = "";
     private static final Integer EXPLICITWAIT = 10;
+
+    public static String getGECKODRIVERPATH() {
+        return GECKODRIVERPATH;
+    }
+
+    public static String getITERATIONDATASHEET() {
+        return ITERATIONDATASHEET;
+    }
 
     public static String getRUNMANGERSHEET() {
         return RUNMANGERSHEET;

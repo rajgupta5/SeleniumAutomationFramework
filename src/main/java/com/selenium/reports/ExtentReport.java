@@ -34,6 +34,7 @@ public final class ExtentReport {
         if(Objects.nonNull(extent)) {
             extent.flush();
         }
+        ExtentManager.unload();
     }
 
     public static void createTest(String testcasename) {

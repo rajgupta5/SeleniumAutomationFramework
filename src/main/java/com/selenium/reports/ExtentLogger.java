@@ -2,7 +2,7 @@ package com.selenium.reports;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.selenium.enums.ConfigProperties;
-import com.selenium.utilities.PropertyUtil;
+import com.selenium.utils.PropertyUtil;
 import com.selenium.utils.TestUtils;
 import lombok.SneakyThrows;
 
