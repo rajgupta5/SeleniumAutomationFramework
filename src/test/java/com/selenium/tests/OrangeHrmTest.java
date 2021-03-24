@@ -18,7 +18,6 @@ public final class OrangeHrmTest extends BaseTest {
 
     @Test(dataProvider = "LoginTestDataProvider")
     public void LoginLogoutTest(String username, String password) {
-        ExtentReport.createTest("loginlogouttest");
         DriverManager.getDriver().manage().window().maximize();
         OrangeHrmLoginPage ohrmp = new OrangeHrmLoginPage();
         OrangeHrmLoginPage ohrml = ohrmp.enterUsername(username).enterPassword(password).clickLogin().clickWelcome().clickLogout();

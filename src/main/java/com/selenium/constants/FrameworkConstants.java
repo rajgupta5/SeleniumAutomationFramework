@@ -10,7 +10,12 @@ public final class FrameworkConstants {
     private static final String CHROMEDRIVERPATH = USERDIRPATH + "\\src\\test\\resources\\executables\\chromedriver.exe";
     private static final String CONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\framework.properties";
     private static final String JSONCONFIGFILEPATH = USERDIRPATH +"\\src\\test\\resources\\config\\config.json";
+    public static final String EXTENTREPORTPATH = USERDIRPATH+"\\ExtentReports\\index.html";
     private static final Integer EXPLICITWAIT = 10;
+
+    public static String getEXTENTREPORTPATH() {
+        return EXTENTREPORTPATH;
+    }
 
     public static String getJSONCONFIGFILEPATH() {
         return JSONCONFIGFILEPATH;

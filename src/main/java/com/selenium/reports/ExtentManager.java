@@ -10,15 +10,15 @@ public class ExtentManager {
 
     private static ThreadLocal<ExtentTest> extTest = new ThreadLocal<>();
 
-    public static ExtentTest getExtentTest() {
+    static ExtentTest getExtentTest() {
         return extTest.get();
     }
 
-    public static void setExtentTest(ExtentTest extentRef) {
+    static void setExtentTest(ExtentTest extentRef) {
         extTest.set(extentRef);
     }
 
-    public static void unload() {
+    static void unload() {
         extTest.remove();
     }
 }

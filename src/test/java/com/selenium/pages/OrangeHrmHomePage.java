@@ -1,6 +1,7 @@
 package com.selenium.pages;
 
 import com.selenium.enums.WaitStrategy;
+import com.selenium.reports.ExtentLogger;
 import com.selenium.reports.ExtentManager;
 import org.openqa.selenium.By;
 
@@ -22,8 +23,7 @@ public final class OrangeHrmHomePage extends BasePage {
     private final By lnkLogout = By.xpath("//a[text()='Logout']");
 
     public OrangeHrmHomePage clickWelcome() {
-        click(lnkWelcome, WaitStrategy.PRESENCE);
-        ExtentManager.getExtentTest().pass("welcome clicked");
+        click(lnkWelcome, WaitStrategy.PRESENCE, "welcome");
         return this;
     }
 
@@ -32,8 +32,7 @@ public final class OrangeHrmHomePage extends BasePage {
 //        Uninterruptibles.sleepUninterruptibly(1, TimeUnit.SECONDS);
 
 //        wait.until(d->d.findElement(lnk_logout).isEnabled());
-        click(lnkLogout, WaitStrategy.CLICKABLE);
-        ExtentManager.getExtentTest().pass("logout button clicked");
+        click(lnkLogout, WaitStrategy.CLICKABLE, "logout");
         return new OrangeHrmLoginPage();
     }
 }

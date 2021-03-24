@@ -28,7 +28,7 @@ public final class OrangeHrmLoginPage extends BasePage {
     }
 
     public OrangeHrmHomePage clickLogin() {
-        click(buttonLogin, WaitStrategy.CLICKABLE);
+        click(buttonLogin, WaitStrategy.CLICKABLE, "login");
         return new OrangeHrmHomePage();
     }
 
