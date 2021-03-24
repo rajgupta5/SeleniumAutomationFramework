@@ -1,4 +1,4 @@
-# SeleniumFramework
+# SeleniumAutomationFramework
 
 ## TechStack
 - Java
