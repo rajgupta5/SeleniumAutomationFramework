@@ -11,8 +11,8 @@
 		<classes>
 <!--		    <class name="LoginPageTest" />-->
 <!--			<class name="HomePageTest" />-->
-			<class name="com.selenium.tests.OrangeHrmTest">
-			</class>
+<!--			<class name="com.selenium.tests.OrangeHrmTest"/>-->
+			<class name="com.selenium.tests.AmazonDemoTest"/>
 		</classes>
 	</test>
 </suite>  
