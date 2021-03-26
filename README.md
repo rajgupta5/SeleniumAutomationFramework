@@ -23,6 +23,7 @@
 - Selenoid Integration
 - Custom Annotations
 - Base64 Encoding and decoding password
+  - https://www.base64encode.org/
 - Exceptional Handling using Custom Exceptions
 - Web driver manager
   - is a library which allows to automate the management of the drivers (e.g. chromedriver, geckodriver, etc.) required by Selenium WebDriver.
