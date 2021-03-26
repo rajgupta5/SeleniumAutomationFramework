@@ -9,10 +9,10 @@
 
 	<test name="Sample UI Test - Desktop" parallel="methods" thread-count="1">
 		<classes>
-<!--		    <class name="LoginPageTest" />-->
+<!--		    <class name="com.selenium.tests.LoginPageTest" />-->
 <!--			<class name="HomePageTest" />-->
-<!--			<class name="com.selenium.tests.OrangeHrmTest"/>-->
-			<class name="com.selenium.tests.AmazonDemoTest"/>
+			<class name="com.selenium.tests.OrangeHrmTest"/>
+<!--			<class name="com.selenium.tests.AmazonDemoTest"/>-->
 		</classes>
 	</test>
 </suite>  

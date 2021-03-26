@@ -45,17 +45,12 @@ public final class FrameworkConstants {
     }
 
     private static String createExtentFilePath() {
-        try {
             if(PropertyUtil.get(ConfigProperties.OVERRIDEREPORTS).equalsIgnoreCase("yes")) {
                 return "/" + System.currentTimeMillis() + "index.html";
             }
             else {
                 return "/index.html";
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
     }
 
     public static String getJSONCONFIGFILEPATH() {

@@ -1,6 +1,8 @@
 package com.selenium.tests;
 
+import com.selenium.annotations.FrameworkAnnotation;
 import com.selenium.driver.DriverManager;
+import com.selenium.enums.CategoryType;
 import com.selenium.listeners.RetryFailedTests;
 import com.selenium.utils.DataProviderUtils;
 import org.assertj.core.api.Assertions;
@@ -17,6 +19,8 @@ public final class OrangeHrmTest extends BaseTest {
 
 
     @Test
+    @FrameworkAnnotation(author= {"Raj"},
+            category = {CategoryType.REGRESSION})
     public void LoginLogoutTest(Map<String, String> data) {
         DriverManager.getDriver().manage().window().maximize();
         OrangeHrmLoginPage ohrmp = new OrangeHrmLoginPage();

@@ -1,6 +1,7 @@
 package com.selenium.pages;
 
 import com.selenium.enums.WaitStrategy;
+import com.selenium.utils.DecodeUtils;
 import org.openqa.selenium.By;
 
 public final class OrangeHrmLoginPage extends BasePage {
@@ -23,7 +24,7 @@ public final class OrangeHrmLoginPage extends BasePage {
     }
 
     public OrangeHrmLoginPage enterPassword(String password) {
-        sendText(textboxPassword, password, WaitStrategy.PRESENCE);
+        sendText(textboxPassword, DecodeUtils.getDecodedString(password), WaitStrategy.PRESENCE);
         return this;
     }
 
