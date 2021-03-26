@@ -1,5 +1,6 @@
 package com.selenium.listeners;
 
+import com.selenium.annotations.FrameworkAnnotation;
 import com.selenium.constants.FrameworkConstants;
 import com.selenium.reports.ExtentLogger;
 import com.selenium.reports.ExtentReport;
@@ -30,6 +31,10 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     public void onTestStart(ITestResult iTestResult) {
         ExtentReport.createTest(iTestResult.getMethod().getMethodName());
         ExtentLogger.pass(iTestResult.getName() + " is started successfully", true);
+        ExtentReport.addAuthors(iTestResult.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
+                .author());
+        ExtentReport.addCategories(iTestResult.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class)
+                .category());
 
     }
 

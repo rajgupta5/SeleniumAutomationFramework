@@ -1,5 +1,7 @@
 package com.selenium.tests;
 
+import com.selenium.annotations.FrameworkAnnotation;
+import com.selenium.enums.CategoryType;
 import com.selenium.pages.AmazonHomePage;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
@@ -16,6 +18,8 @@ public final class AmazonDemoTest extends BaseTest{
 
 
 	@Test
+	@FrameworkAnnotation(author= {"Raj","Diggy"},
+			category = {CategoryType.REGRESSION,CategoryType.MINIREGRESSION})
 	public void amazonTest(Map<String,String> data) {
 		String title =new AmazonHomePage().clickHamburger()
 				.clickComputer()
