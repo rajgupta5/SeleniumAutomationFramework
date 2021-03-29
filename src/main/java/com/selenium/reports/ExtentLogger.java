@@ -3,7 +3,7 @@ package com.selenium.reports;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.selenium.enums.ConfigProperties;
 import com.selenium.utils.PropertyUtil;
-import com.selenium.utils.TestUtils;
+import com.selenium.utils.ScreenshotUtils;
 
 public final class ExtentLogger {
 
@@ -19,7 +19,7 @@ public final class ExtentLogger {
     public static void pass(String details, boolean isScreenShotNeeded) {
         if(PropertyUtil.get(ConfigProperties.PASSEDSTEPSSCREENSHOT).equalsIgnoreCase("yes") &&
                 isScreenShotNeeded) {
-            ExtentManager.getExtentTest().pass(details, MediaEntityBuilder.createScreenCaptureFromBase64String(TestUtils.getBase64Image()).build());
+            ExtentManager.getExtentTest().pass(details, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
         }
         else {
             pass(details);
@@ -34,7 +34,7 @@ public final class ExtentLogger {
     public static void fail(String details, boolean isScreenShotNeeded) {
         if(PropertyUtil.get(ConfigProperties.FAILEDSTEPSSCREENSHOT).equalsIgnoreCase("yes") &&
                 isScreenShotNeeded) {
-            ExtentManager.getExtentTest().fail(details, MediaEntityBuilder.createScreenCaptureFromBase64String(TestUtils.getBase64Image()).build());
+            ExtentManager.getExtentTest().fail(details, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
         }
         else {
             fail(details);
@@ -49,7 +49,7 @@ public final class ExtentLogger {
 
         if(PropertyUtil.get(ConfigProperties.SKIPPEDSTEPSSCREENSHOT).equalsIgnoreCase("yes") &&
                 isScreenShotNeeded) {
-            ExtentManager.getExtentTest().skip(details, MediaEntityBuilder.createScreenCaptureFromBase64String(TestUtils.getBase64Image()).build());
+            ExtentManager.getExtentTest().skip(details, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
         }
         else {
             skip(details);
