@@ -1,12 +1,11 @@
 package com.selenium.driver;
 
-import com.selenium.constants.FrameworkConstants;
 import com.selenium.enums.ConfigProperties;
+import com.selenium.exceptions.BrowserInvocationFailedException;
+import com.selenium.factories.DriverFactory;
 import com.selenium.utils.PropertyUtil;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.net.MalformedURLException;
 import java.util.Objects;
 
 public final class Driver {
@@ -15,17 +14,13 @@ public final class Driver {
 
      }
 
-    public static void initDriver(String browser) throws Exception {
+    public static void initDriver(String browser,String version)  {
         if(Objects.isNull(DriverManager.getDriver())) {
-            if(browser.equalsIgnoreCase("chrome")) {
-//                System.setProperty("webdriver.chrome.driver", FrameworkConstants.getCHROMEDRIVERPATH());
-                WebDriverManager.chromedriver().setup();
-                DriverManager.setDriver(new ChromeDriver());
-            }
-            else if(browser.equalsIgnoreCase("firefox")) {
-//                System.setProperty("webdriver.gecko.driver", FrameworkConstants.getGECKODRIVERPATH());
-                WebDriverManager.firefoxdriver().setup();
-                DriverManager.setDriver(new FirefoxDriver());
+            try {
+                DriverManager.setDriver(DriverFactory.getDriver(browser,version));
+
+            } catch (MalformedURLException e) {
+                throw new BrowserInvocationFailedException("Please check the capabilities of browser");
             }
             DriverManager.getDriver().get(PropertyUtil.get(ConfigProperties.URL));
         }
